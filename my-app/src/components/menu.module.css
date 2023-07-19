@@ -1,0 +1,9 @@
+.container{
+    min-height: 100vh;
+}
+.backgroundImage {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    opacity: inherit;
+}
