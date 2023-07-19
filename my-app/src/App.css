@@ -1,0 +1,14 @@
+:root {
+  --header-height: 3rem;
+  --nav-width: 4rem;
+  --primary-color: #ecd282;
+  --second-color: #ff8400;
+  --brown-color: #1c1c1c;
+  --buttons-color: #011936;
+  --bg-color: #fbf2dd;
+  --input-fields-color: #fffcf6;
+  --error-color: #c43333;
+  --borders-color: #ccc;
+
+  background-color: var(--input-fields-color);
+}
