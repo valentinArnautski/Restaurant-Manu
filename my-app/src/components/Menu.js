@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import styles from "./menu.module.css";
-import background from '../images/background.jpg'
 
 export const Menu = () => {
 
@@ -8,7 +7,7 @@ export const Menu = () => {
        <Box className={styles.container}>
         <Box
         className={styles.backgroundImage}
-        style={{ backgroundImage: `url(https://wallpapercave.com/dwp1x/wp1874157.jpg)` }}
+        style={{ backgroundImage: `url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80)` }}
         >
         </Box>
         </Box>
