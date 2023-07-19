@@ -44,3 +44,32 @@
     color: var(--buttons-color);
     font-weight: bold;
 }
+
+.foodBtnsSection{
+    margin-top: 10%;
+}
+
+.foodBtn {
+    background-color: rgba(204, 204, 204, 0.8); /* Fallback to gray color with 80% transparency */
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    padding: 2% 0;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .foodBtn img {
+    padding: 0 6%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+ .foodBtn .label {
+    font-size: 18px;
+    font-weight: 500;
+}
+  

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, ThemeProvider } from '@mui/material';
 import styles from './menu.module.css';
 import { theme } from './colorTheme';
+import foodSections from './mockData';
 
 export const Menu = () => {
     const [activeMenuItem, setActiveMenuItem] = useState('');
@@ -12,8 +13,7 @@ export const Menu = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                className={styles.container}>
+            <Box className={styles.container}>
                 <Box className={styles.header}>
                     <p className={styles.title}>Blankfactor</p>
                 </Box>
@@ -50,7 +50,18 @@ export const Menu = () => {
                         backgroundImage:
                             'url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80)',
                     }}
-                ></Box>
+                >
+                    <div className={styles.foodBtnsSection}>
+                        {foodSections.map((section) => (
+                            <div className={styles.foodBtn} key={section.name}>
+                                <img src={section.image} alt={section.label} className={styles.img} />
+                                <p className={styles.label}>{section.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </Box>
+
+
             </Box>
         </ThemeProvider>
     );
