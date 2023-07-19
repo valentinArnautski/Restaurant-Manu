@@ -12,3 +12,9 @@
 
   background-color: var(--input-fields-color);
 }
+
+@font-face {
+  font-family: "MarckScripts";
+  src: url("./assets/Fonts/Marck_Script/MarckScript-Regular.ttf")
+    format("truetype");
+}
