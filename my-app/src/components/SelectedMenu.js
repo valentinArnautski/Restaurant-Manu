@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './menu.module.css';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const SelectedMenu = ({ selectedMenu, foodSections }) => {
     return (
@@ -14,9 +14,21 @@ const SelectedMenu = ({ selectedMenu, foodSections }) => {
             {foodSections.find(section => section.label === selectedMenu).dishes.map(dish => (
                 <div className={styles.dishContainer} key={dish.label}>
                     <img className={styles.dishImg} src={dish.image} alt={dish.label} />
-                    <p>{dish.label}</p>
-                    <p>{dish.weight}</p>
-                    <p>{dish.price}</p>
+                    <p className={styles.dishTitle}>{dish.label}</p>
+                    <div className={styles.dishInfoSection}>
+                    <p className={styles.dishInfo}>{dish.weight}</p>
+                    <p className={styles.dishInfo}>{dish.price}</p>
+                    </div>
+
+                    <div className={styles.dishBtnSection}>
+                        <Button className={styles.dishBtn}
+                        variant='contained'
+                        >Коментар</Button>
+                        
+                        <Button className={styles.dishBtn}
+                        variant='contained'
+                        >Добави</Button>
+                    </div>
                 </div>
             ))}
         </div>

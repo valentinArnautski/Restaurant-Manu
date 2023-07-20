@@ -22,11 +22,11 @@
     overflow: hidden;
 }
 
-.header .title{
+.header .title {
     font-family: "MarckScripts", sans-serif;
-    font-size: 32px; 
+    font-size: 32px;
     font-weight: bold;
-  }
+}
 
 .menuNavContainer {
     margin: 4% 10%;
@@ -45,12 +45,13 @@
     font-weight: bold;
 }
 
-.foodBtnsSection{
+.foodBtnsSection {
     margin-top: 10%;
 }
 
 .foodBtn {
-    background-color: rgba(204, 204, 204, 0.8); /* Fallback to gray color with 80% transparency */
+    background-color: rgba(204, 204, 204, 0.8);
+    /* Fallback to gray color with 80% transparency */
     display: flex;
     flex-direction: row;
     width: 85%;
@@ -59,25 +60,26 @@
     padding: 2% 0;
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .foodBtn img {
+.foodBtn img {
     padding: 0 6%;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-  }
-  
- .foodBtn .label {
+}
+
+.foodBtn .label {
     font-size: 18px;
     font-weight: 500;
 }
 
-.dishSection{
+.dishSection {
     margin-top: 10%;
+    text-align: center
 }
 
-.dishContainer{
+.dishContainer {
     margin-left: 6%;
     margin-bottom: 6%;
     width: 80%;
@@ -89,4 +91,31 @@
 
 .dishImg {
     width: 100%;
+}
+
+.dishTitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dishInfoSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 30%;
+}
+
+.dishInfo{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dishBtn{
+    margin: 0 4%;
+    margin-bottom: 6%;
+    font-weight: bold;
+    color: var(--buttons-color);
+    background-color: var(--primary-color);
+
 }

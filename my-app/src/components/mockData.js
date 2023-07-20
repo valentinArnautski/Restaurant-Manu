@@ -4,17 +4,17 @@ const foodSections = [
       image: 'https://pngimg.com/uploads/steak/steak_PNG44.png',
       dishes: [
           { label: 'Пилешко филе на скара', weight: '250гр', price: '18.90лв', image: 'https://i.pinimg.com/564x/16/3e/63/163e63522836aa7e91a8958482abe31c.jpg' },
-          { label: 'Свинска вратна пържола', weight: '300гр', price: '15.99лв', image: 'url_to_image_2' },
-          { label: 'Телешки суджук на скара', weight: '250гр', price: '15.50лв', image: 'url_to_image_3' },
+          { label: 'Свинска вратна пържола', weight: '300гр', price: '15.99лв', image: 'https://img.delicious.com.au/tgHVPDd8/w759-h506-cfill/del/2015/10/roast-pork-neck-20543-1.jpg' },
+          { label: 'Телешки суджук на скара', weight: '250гр', price: '15.50лв', image: 'https://i.pinimg.com/564x/08/a6/ae/08a6aea952a3d4740ae935ab0038a6b8.jpg' },
       ]
   },
   {
       label: 'Брънч Меню',
       image: 'https://www.gunnarruud.no/wp-content/uploads/2018/04/club-sandwich-510x340.jpg',
       dishes: [
-          { label: 'Club Sandwich', weight: '200гр', price: '12.50лв', image: 'url_to_image_4' },
-          { label: 'French Toast', weight: '150гр', price: '9.99лв', image: 'url_to_image_5' },
-          { label: 'Pancakes', weight: '180гр', price: '10.50лв', image: 'url_to_image_6' },
+          { label: 'Club Sandwich', weight: '200гр', price: '12.50лв', image: 'https://www.gunnarruud.no/wp-content/uploads/2018/04/club-sandwich-510x340.jpg' },
+          { label: 'French Toast', weight: '150гр', price: '9.99лв', image: 'https://lilluna.com/wp-content/uploads/2019/01/french-toast-resize-5.jpg' },
+          { label: 'Pancakes', weight: '180гр', price: '10.50лв', image: 'https://www.cuisinart.com/globalassets/recipes/recipe_10508_1862543848.jpg' },
       ]
   },
   {
