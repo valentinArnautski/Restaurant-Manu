@@ -72,4 +72,21 @@
     font-size: 18px;
     font-weight: 500;
 }
-  
+
+.dishSection{
+    margin-top: 10%;
+}
+
+.dishContainer{
+    margin-left: 6%;
+    margin-bottom: 6%;
+    width: 80%;
+    border-radius: 2%;
+    background-color: var(--input-fields-color);
+    box-shadow: 8px 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid var(--borders-color);
+}
+
+.dishImg {
+    width: 100%;
+}
