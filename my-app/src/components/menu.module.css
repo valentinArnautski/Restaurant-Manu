@@ -29,7 +29,7 @@
 }
 
 .menuNavContainer {
-    margin: 4% 10%;
+    margin: 4% 15%;
 }
 
 .menuNavigation {
@@ -46,7 +46,7 @@
 }
 
 .foodBtnsSection {
-    margin-top: 10%;
+    padding-top: 10%;
 }
 
 .foodBtn {
@@ -99,21 +99,24 @@
     margin: 0;
 }
 
-.dishInfoSection{
+.dishInfoSection {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 30%;
 }
 
-.dishInfo{
+.dishInfo {
     font-size: 16px;
     font-weight: 500;
 }
 
-.dishBtn{
-    margin: 0 4%;
+.dishBtnSection {
     margin-bottom: 6%;
+}
+
+.dishBtn {
+    margin: 0 4%;
     font-weight: bold;
     color: var(--buttons-color);
     background-color: var(--primary-color);
