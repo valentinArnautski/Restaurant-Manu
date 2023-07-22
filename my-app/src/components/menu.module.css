@@ -13,19 +13,43 @@
     opacity: 90%;
 }
 
-.header {
+.headerSection {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
     background-color: var(--input-fields-color);
+    padding: 0;
     width: 100%;
-    text-align: center;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 30px 30px;
     overflow: hidden;
 }
 
+.header {
+    grid-column: 2;
+    text-align: center;
+}
+
 .header .title {
     font-family: "MarckScripts", sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
+}
+
+.icons {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 8%;
+    gap: 8px;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10%;
 }
 
 .menuNavContainer {
@@ -55,7 +79,7 @@
     display: flex;
     flex-direction: row;
     width: 85%;
-    margin-left: 4%;
+    margin-left: 8%;
     margin-bottom: 4%;
     padding: 2% 0;
     border-radius: 10px;

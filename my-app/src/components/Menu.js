@@ -3,7 +3,12 @@ import { Box, Button, ThemeProvider } from '@mui/material';
 import styles from './menu.module.css';
 import { theme } from './colorTheme';
 import foodSections from './mockData';
-import SelectedMenu from './SelectedMenu'; // import new component here
+import SelectedMenu from './SelectedMenu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
+
+
 
 export const Menu = () => {
     const [activeMenuItem, setActiveMenuItem] = useState('');
@@ -20,8 +25,32 @@ export const Menu = () => {
     return (
         <ThemeProvider theme={theme}>
             <Box className={styles.container}>
-                <Box className={styles.header}>
-                    <p className={styles.title}>Blankfactor</p>
+                <Box className={styles.headerSection}>
+                    <div className={styles.menu}>
+                        <MenuIcon
+                            style={{
+                                color: 'var(--buttons-color)',
+                                fontSize: '30px',
+                            }}
+                        />
+                    </div>
+                    <div className={styles.header}>
+                        <p className={styles.title}>Blankfactor</p>
+                    </div>
+                    <div className={styles.icons}>
+                        <AccountCircleIcon
+                            style={{
+                                color: 'var(--buttons-color)',
+                                fontSize: '30px',
+                            }}
+                        />
+                        <ShoppingCartIcon
+                            style={{
+                                color: 'var(--buttons-color)',
+                                fontSize: '30px',
+                            }}
+                        />
+                    </div>
                 </Box>
 
                 {!selectedMenu && (

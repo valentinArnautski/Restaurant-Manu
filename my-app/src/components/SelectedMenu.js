@@ -24,7 +24,7 @@ const SelectedMenu = ({ selectedMenu, foodSections }) => {
                         <Button className={styles.dishBtn}
                         variant='contained'
                         >Коментар</Button>
-                        
+
                         <Button className={styles.dishBtn}
                         variant='contained'
                         >Добави</Button>
