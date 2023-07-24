@@ -1,8 +1,16 @@
 import React from 'react';
 import styles from './menu.module.css';
-import { Box, Button } from '@mui/material';
+import { Box, Button, colors } from '@mui/material';
 
 const SelectedMenu = ({ selectedMenu, foodSections }) => {
+
+
+
+    const handleAddButtonClick = () => {
+
+    }
+
+
     return (
         <Box
         className={styles.backgroundImage}
@@ -22,12 +30,23 @@ const SelectedMenu = ({ selectedMenu, foodSections }) => {
 
                     <div className={styles.dishBtnSection}>
                         <Button className={styles.dishBtn}
+                        style={{
+                            background: 'var(--primary-color)',
+                            color: 'black',
+                            fontWeight: 'bold',
+                            margin: '0 4%'
+                        }}
                         variant='contained'
                         >Коментар</Button>
 
                         <Button className={styles.dishBtn}
                         variant='contained'
-                        >Добави</Button>
+                        style={{
+                            background: 'var(--primary-color)',
+                            color: 'black',
+                            fontWeight: 'bold',
+                            margin: '0 4%'
+                        }}                        >Добави</Button>
                     </div>
                 </div>
             ))}
