@@ -4,8 +4,10 @@ import styles from "./menu.module.css";
 import { theme } from "./colorTheme";
 import foodSections from "./Mock Data/FoodData";
 import drinkSections from "./Mock Data/DrinksData";
+
 import Header from "./Header/Header";
 import FoodSelection from "./Food/FoodSelection";
+import DrinkSelection from "./Drinks/DrinksSelection";
 
 export const Menu = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("");
@@ -86,12 +88,18 @@ export const Menu = () => {
           </div>
         )}
 
-        {selectedMenu && (
-          <FoodSelection
-            selectedMenu={selectedMenu}
-            foodSections={foodSections}
-          />
-        )}
+        {selectedMenu &&
+          (activeMenuItem === "Ястия" ? (
+            <FoodSelection
+              selectedMenu={selectedMenu}
+              foodSections={foodSections}
+            />
+          ) : (
+            <DrinkSelection
+              selectedMenu={selectedMenu}
+              drinkSections={drinkSections}
+            />
+          ))}
       </Box>
     </ThemeProvider>
   );

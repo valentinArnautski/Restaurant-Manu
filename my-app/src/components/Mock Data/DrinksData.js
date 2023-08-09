@@ -3,7 +3,7 @@ const drinkSections = [
     label: "Газирани Напитки",
     image:
       "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
-    dishes: [
+    drinks: [
       {
         label: "Coca-Cola",
         weight: "330мл",

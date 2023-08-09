@@ -1,9 +1,7 @@
-import React from "react";
 import styles from "../menu.module.css";
 import { Box, Button, colors } from "@mui/material";
 
 const FoodSelection = ({ selectedMenu, foodSections }) => {
-
   return (
     <Box
       className={styles.backgroundImage}
