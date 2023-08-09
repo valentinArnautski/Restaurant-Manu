@@ -6,12 +6,12 @@
   opacity: 90%;
 }
 
-.wineSection {
+.dishSection {
   margin-top: 10%;
   text-align: center;
 }
 
-.wineContainer {
+.dishContainer {
   margin-left: 10%;
   margin-bottom: 6%;
   width: 80%;
@@ -21,34 +21,34 @@
   border: solid var(--borders-color);
 }
 
-.wineImg {
+.dishImg {
   width: 100%;
 }
 
-.wineTitle {
+.dishTitle {
   font-size: 18px;
   font-weight: 500;
   margin: 0;
   margin-top: 4%;
 }
 
-.wineInfoSection {
+.dishInfoSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 30%;
 }
 
-.wineInfo {
+.dishInfo {
   font-size: 16px;
   font-weight: 500;
 }
 
-.wineBtnSection {
+.dishBtnSection {
   margin-bottom: 6%;
 }
 
-.wineBtnSection .wineBtn {
+.dishBtnSection .dishBtn {
   margin: 0 4%;
   font-weight: bold;
   color: var(--buttons-color);

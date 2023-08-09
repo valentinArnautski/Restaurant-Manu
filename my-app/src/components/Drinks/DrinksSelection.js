@@ -3,13 +3,7 @@ import styles from "./drinks.module.css";
 
 const DrinkSelection = ({ selectedMenu, drinkSections }) => {
   return (
-    <Box
-      className={styles.backgroundImage}
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80)",
-      }}
-    >
+    <Box>
       <div className={styles.drinkSection}>
         {drinkSections
           .find((section) => section.label === selectedMenu)
@@ -22,29 +16,11 @@ const DrinkSelection = ({ selectedMenu, drinkSections }) => {
               </div>
 
               <div className={styles.drinkBtnSection}>
-                <Button
-                  className={styles.drinkBtn}
-                  style={{
-                    background: "var(--primary-color)",
-                    color: "black",
-                    fontWeight: "bold",
-                    margin: "0 4%",
-                  }}
-                  variant="contained"
-                >
+                <Button className={styles.drinkBtn} variant="contained">
                   Коментар
                 </Button>
 
-                <Button
-                  className={styles.drinkBtn}
-                  variant="contained"
-                  style={{
-                    background: "var(--primary-color)",
-                    color: "black",
-                    fontWeight: "bold",
-                    margin: "0 4%",
-                  }}
-                >
+                <Button className={styles.drinkBtn} variant="contained">
                   Добави
                 </Button>
               </div>

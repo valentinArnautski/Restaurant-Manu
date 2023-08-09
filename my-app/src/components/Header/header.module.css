@@ -1,0 +1,39 @@
+.headerSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  background-color: var(--input-fields-color);
+  padding: 0;
+  width: 100%;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.header {
+  grid-column: 2;
+  text-align: center;
+  background-color: white;
+}
+
+.header .title {
+  font-family: "MarckScripts", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.icons {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 8%;
+  gap: 8px;
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10%;
+}

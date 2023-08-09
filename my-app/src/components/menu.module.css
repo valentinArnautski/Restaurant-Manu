@@ -13,47 +13,10 @@
   opacity: 90%;
 }
 
-.headerSection {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  background-color: var(--input-fields-color);
-  padding: 0;
-  width: 100%;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 30px 30px;
-  overflow: hidden;
-}
-
-.header {
-  grid-column: 2;
-  text-align: center;
-}
-
-.header .title {
-  font-family: "MarckScripts", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.icons {
-  grid-column: 3;
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 8%;
-  gap: 8px;
-}
-
-.menu {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0 10%;
-}
-
 .menuNavContainer {
-  margin: 3% 10%;
+  padding: 10px 10%;
+  background-color: var(--primary-color);
+  border-top: solid 2px var(--borders-color);
 }
 
 .menuNavigation {
@@ -75,7 +38,6 @@
 
 .sectionBtn {
   background-color: rgba(204, 204, 204, 0.8);
-  /* Fallback to gray color with 80% transparency */
   display: flex;
   flex-direction: row;
   width: 85%;

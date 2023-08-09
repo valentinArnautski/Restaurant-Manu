@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import styles from "../menu.module.css";
+import styles from "./header.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
