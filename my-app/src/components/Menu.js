@@ -4,10 +4,11 @@ import styles from "./menu.module.css";
 import { theme } from "./colorTheme";
 import foodSections from "./Mock Data/FoodData";
 import drinkSections from "./Mock Data/DrinksData";
-
+import wineSections from "./Mock Data/WineData";
 import Header from "./Header/Header";
 import FoodSelection from "./Food/FoodSelection";
 import DrinkSelection from "./Drinks/DrinksSelection";
+import WineSelection from "./Wines/WineSelection";
 
 export const Menu = () => {
   const [activeMenuItem, setActiveMenuItem] = useState("");
@@ -25,6 +26,8 @@ export const Menu = () => {
       setSelectedSection(foodSections);
     } else if (menuItem === "Напитки") {
       setSelectedSection(drinkSections);
+    } else if (menuItem === "Вино") {
+      setSelectedSection(wineSections);
     }
   };
 
@@ -93,6 +96,11 @@ export const Menu = () => {
             <FoodSelection
               selectedMenu={selectedMenu}
               foodSections={foodSections}
+            />
+          ) : activeMenuItem === "Вино" ? (
+            <WineSelection
+              selectedMenu={selectedMenu}
+              wineSections={wineSections}
             />
           ) : (
             <DrinkSelection
