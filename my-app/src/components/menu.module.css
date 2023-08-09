@@ -1,147 +1,147 @@
 .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
 }
 
 .backgroundImage {
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    opacity: inherit;
-    opacity: 90%;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  opacity: inherit;
+  opacity: 90%;
 }
 
 .headerSection {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    background-color: var(--input-fields-color);
-    padding: 0;
-    width: 100%;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 30px 30px;
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  background-color: var(--input-fields-color);
+  padding: 0;
+  width: 100%;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
 }
 
 .header {
-    grid-column: 2;
-    text-align: center;
+  grid-column: 2;
+  text-align: center;
 }
 
 .header .title {
-    font-family: "MarckScripts", sans-serif;
-    font-size: 28px;
-    font-weight: bold;
+  font-family: "MarckScripts", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .icons {
-    grid-column: 3;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 8%;
-    gap: 8px;
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 8%;
+  gap: 8px;
 }
 
 .menu {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 10%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10%;
 }
 
 .menuNavContainer {
-    margin: 4% 15%;
+  margin: 3% 15%;
 }
 
 .menuNavigation {
-    width: 100%;
-    height: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .menuNavigation .btns {
-    color: var(--buttons-color);
-    font-weight: bold;
+  color: var(--buttons-color);
+  font-weight: bold;
 }
 
-.foodBtnsSection {
-    padding-top: 10%;
+.sectionBtnsSection {
+  padding-top: 10%;
 }
 
-.foodBtn {
-    background-color: rgba(204, 204, 204, 0.8);
-    /* Fallback to gray color with 80% transparency */
-    display: flex;
-    flex-direction: row;
-    width: 85%;
-    margin-left: 8%;
-    margin-bottom: 4%;
-    padding: 2% 0;
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+.sectionBtn {
+  background-color: rgba(204, 204, 204, 0.8);
+  /* Fallback to gray color with 80% transparency */
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  margin-left: 8%;
+  margin-bottom: 4%;
+  padding: 2% 0;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.foodBtn img {
-    padding: 0 6%;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.sectionBtn img {
+  padding: 0 6%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
-.foodBtn .label {
-    font-size: 18px;
-    font-weight: 500;
+.sectionBtn .label {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .dishSection {
-    margin-top: 10%;
-    text-align: center
+  margin-top: 10%;
+  text-align: center;
 }
 
 .dishContainer {
-    margin-left: 6%;
-    margin-bottom: 6%;
-    width: 80%;
-    border-radius: 2%;
-    background-color: var(--input-fields-color);
-    box-shadow: 8px 3px 3px rgba(0, 0, 0, 0.2);
-    border: solid var(--borders-color);
+  margin-left: 10%;
+  margin-bottom: 6%;
+  width: 80%;
+  border-radius: 2%;
+  background-color: var(--input-fields-color);
+  box-shadow: 8px 3px 3px rgba(0, 0, 0, 0.2);
+  border: solid var(--borders-color);
 }
 
 .dishImg {
-    width: 100%;
+  width: 100%;
 }
 
 .dishTitle {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .dishInfoSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30%;
 }
 
 .dishInfo {
-    font-size: 16px;
-    font-weight: 500;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .dishBtnSection {
-    margin-bottom: 6%;
+  margin-bottom: 6%;
 }
 
 .dishBtn {
-    margin: 0 4%;
-    font-weight: bold;
-    color: var(--buttons-color);
-    background-color: var(--primary-color);
+  margin: 0 4%;
+  font-weight: bold;
+  color: var(--buttons-color);
+  background-color: var(--primary-color);
 }

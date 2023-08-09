@@ -1,5 +1,5 @@
 import { Box, Button } from '@mui/material'
-import {foodSections} from '../components/mockData'
+import {foodSections} from '../mockData'
 
  const Food = () => {
 
