@@ -17,6 +17,7 @@
   padding: 10px 10%;
   background-color: var(--primary-color);
   border-top: solid 2px var(--borders-color);
+  border-radius: 0 0 15px 15px;
 }
 
 .menuNavigation {
