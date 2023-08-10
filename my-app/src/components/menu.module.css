@@ -33,8 +33,15 @@
   font-weight: bold;
 }
 
+.menuBtnsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .sectionBtnsSection {
-  padding-top: 10%;
+  padding: 4%;
+  width: 40%;
 }
 
 .sectionBtn {
@@ -107,4 +114,11 @@
   font-weight: bold;
   color: var(--buttons-color);
   background-color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionBtnsSection {
+    padding: 10%;
+    width: 100%;
+  }
 }

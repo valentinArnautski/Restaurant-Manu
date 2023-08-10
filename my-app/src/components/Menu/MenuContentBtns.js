@@ -4,7 +4,7 @@ import styles from "../menu.module.css";
 
 const MenuContentBtns = ({ selectedSection, handleMenuSelect }) => {
   return (
-    <Box>
+    <Box className={styles.menuBtnsContainer}>
       <div className={styles.sectionBtnsSection}>
         {selectedSection.map((section) => (
           <div
