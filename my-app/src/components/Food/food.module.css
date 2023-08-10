@@ -1,4 +1,18 @@
 .dishSection {
   margin-top: 10%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 4%;
+}
+
+@media (max-width: 768px) {
+  .dishSection {
+    display: block;
+    width: 100%;
+    margin-top: 10%;
+  }
 }
