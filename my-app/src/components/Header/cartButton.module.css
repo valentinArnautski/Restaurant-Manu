@@ -12,6 +12,11 @@
   font-weight: bold;
 }
 
+/* .button:hover,
+.button:active {
+  background-color: #d9c594;
+} */
+
 .icon {
   width: 1.35rem;
   height: 1.35rem;
@@ -25,6 +30,11 @@
   margin-left: 1rem;
   font-weight: bold;
 }
+
+/* .button:hover .badge,
+.button:active .badge {
+  background-color: #dabaad;
+} */
 
 @media only screen and (max-width: 768px) {
   .text {

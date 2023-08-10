@@ -5,7 +5,6 @@ import { theme } from "../colorTheme";
 import foodSections from "../Mock Data/FoodData";
 import drinkSections from "../Mock Data/DrinksData";
 import wineSections from "../Mock Data/WineData";
-import Header from "../Header/Header";
 import FoodSelection from "../Food/FoodSelection";
 import DrinkSelection from "../Drinks/DrinksSelection";
 import WineSelection from "../Wines/WineSelection";
@@ -42,7 +41,6 @@ export const Menu = () => {
               "url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80)",
           }}
         >
-          <Header />
           {!selectedMenu && (
             <div className={styles.subheader}>
               <div className={styles.menuNavContainer}>
