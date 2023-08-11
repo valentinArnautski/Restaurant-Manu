@@ -1,6 +1,5 @@
 import ProductsCard from "../UI Elements/ProductCard";
 import styles from "./food.module.css";
-import { Box, Button, colors } from "@mui/material";
 
 const FoodSelection = ({ selectedMenu, foodSections }) => {
   return (
