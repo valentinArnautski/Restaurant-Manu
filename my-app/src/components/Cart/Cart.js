@@ -9,13 +9,22 @@ const Cart = (props) => {
   const totalAmount = cartCtx.items.reduce((currentTotal, item) => {
     return currentTotal + parseFloat(item.price);
   }, 0);
-  const hasItems = cartCtx.items.length > 0;
 
+  const hasItems = cartCtx.items.length > 0;
   const cartItems = (
-    <ul className={styles.cartItems}>
+    <ul className={styles.cartList}>
       {cartCtx.items.map((item) => (
-        <li key={item.id}>
-          {item.label} - ${item.price}
+        <li className={styles.cartItem} key={item.id}>
+          <span>{item.label}</span>
+          <div className={styles.summary}>
+            <span className={styles.price}>{item.price}</span>
+            <button
+              className={styles.removeItemBtn}
+              onClick={() => cartCtx.removeItem(item.id)}
+            >
+              X
+            </button>
+          </div>
         </li>
       ))}
     </ul>
