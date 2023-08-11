@@ -1,8 +1,8 @@
 import { Box, useThemeProps } from "@mui/material";
 import styles from "./header.module.css";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
 import CartButton from "./CartButton";
+import AccountButton from "./AccountButton";
 
 const Header = (props) => {
   return (
@@ -19,6 +19,7 @@ const Header = (props) => {
         <p className={styles.title}>Blankfactor</p>
       </div>
       <div className={styles.icons}>
+        <AccountButton />
         <CartButton onClick={props.onShowCart} />
       </div>
     </Box>

@@ -12,15 +12,11 @@
   font-weight: bold;
 }
 
-/* .button:hover,
-.button:active {
-  background-color: #d9c594;
-} */
-
 .icon {
   width: 1.35rem;
   height: 1.35rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .badge {
@@ -32,9 +28,9 @@
 }
 
 /* .button:hover .badge,
-.button:active .badge {
-  background-color: #dabaad;
-} */
+  .button:active .badge {
+    background-color: #dabaad;
+  } */
 
 @media only screen and (max-width: 768px) {
   .text {
@@ -48,7 +44,8 @@
   }
 
   .icon {
-    display: none;
+    margin-right: 0.75rem;
+    margin-bottom: 0.8rem;
   }
 
   .badge {
