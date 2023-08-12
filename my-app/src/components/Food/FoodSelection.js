@@ -1,7 +1,7 @@
 import ProductsCard from "../UI Elements/ProductCard";
 import styles from "./food.module.css";
 
-const FoodSelection = ({ selectedMenu, foodSections }) => {
+const FoodSelection = ({ selectedMenu, foodSections, onShowComment }) => {
   return (
     <div className={styles.dishSection}>
       {foodSections
@@ -13,6 +13,7 @@ const FoodSelection = ({ selectedMenu, foodSections }) => {
             label={dish.label}
             weight={dish.weight}
             price={dish.price}
+            onShowComment={onShowComment}
           />
         ))}
     </div>

@@ -8,19 +8,22 @@ const drinkSections = [
         label: "Coca-Cola",
         weight: "330мл",
         price: "3.00лв",
-        image: "https://pngimg.com/uploads/coca_cola/coca_cola_PNG20.png",
+        image:
+          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
       },
       {
         label: "Sprite",
         weight: "330мл",
         price: "3.00лв",
-        image: "https://pngimg.com/uploads/sprite/sprite_PNG20.png",
+        image:
+          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
       },
       {
         label: "Fanta",
         weight: "330мл",
         price: "3.00лв",
-        image: "https://pngimg.com/uploads/fanta/fanta_PNG715.png",
+        image:
+          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
       },
     ],
   },

@@ -10,7 +10,7 @@ import DrinkSelection from "../Drinks/DrinksSelection";
 import WineSelection from "../Wines/WineSelection";
 import MenuContentBtns from "./MenuContentBtns";
 
-export const Menu = () => {
+export const Menu = ({ onShowComment }) => {
   const [activeMenuItem, setActiveMenuItem] = useState("Ястия");
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [selectedSection, setSelectedSection] = useState(foodSections);
@@ -80,16 +80,19 @@ export const Menu = () => {
           {selectedMenu &&
             (activeMenuItem === "Ястия" ? (
               <FoodSelection
+                onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
                 foodSections={foodSections}
               />
             ) : activeMenuItem === "Вино" ? (
               <WineSelection
+                onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
                 wineSections={wineSections}
               />
             ) : (
               <DrinkSelection
+                onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
                 drinkSections={drinkSections}
               />

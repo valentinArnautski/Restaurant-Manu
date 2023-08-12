@@ -5,10 +5,12 @@ import Header from "./components/Header/Header";
 import { Menu } from "./components/Menu/Menu";
 import CartProvider from "./store/CartProvider";
 import Login from "./components/Account/Login";
+import Comment from "./components/Comments/Comment";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [loginPageShown, setLoginPageShown] = useState(false);
+  const [commentsIsShown, setCommentsIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -26,14 +28,23 @@ function App() {
     setLoginPageShown(false);
   };
 
+  const showCommentHandler = () => {
+    setCommentsIsShown(true);
+  };
+
+  const closeCommentHandler = () => {
+    setCommentsIsShown(false);
+  };
+
   return (
     <CartProvider>
       <div className="App">
         {cartIsShown && <Cart onClose={hideCartHandler} />}
         {loginPageShown && <Login onClose={closeLoginPage} />}
+        {commentsIsShown && <Comment onClose={closeCommentHandler} />}
         <Header onShowCart={showCartHandler} onLogin={showLoginPage} />
         <main>
-          <Menu />
+          <Menu onShowComment={showCommentHandler} />
         </main>
       </div>
     </CartProvider>

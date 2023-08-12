@@ -1,7 +1,7 @@
 import ProductsCard from "../UI Elements/ProductCard";
 import styles from "./wines.module.css";
 
-const WineSelection = ({ selectedMenu, wineSections }) => {
+const WineSelection = ({ selectedMenu, wineSections, onShowComment }) => {
   return (
     <div className={styles.wineSection}>
       {wineSections
@@ -10,8 +10,10 @@ const WineSelection = ({ selectedMenu, wineSections }) => {
           <ProductsCard
             key={wine.label}
             label={wine.label}
+            image={wine.image}
             weight={wine.weight}
             price={wine.price}
+            onShowComment={onShowComment}
           />
         ))}
     </div>

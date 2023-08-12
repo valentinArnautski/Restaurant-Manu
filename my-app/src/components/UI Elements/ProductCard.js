@@ -1,14 +1,14 @@
-import { Button } from "@mui/material";
+import { Button, useThemeProps } from "@mui/material";
 import styles from "./productCard.module.css";
 import { useContext } from "react";
-import CartContext from '../../store/cartContext'
+import CartContext from "../../store/cartContext";
 
-const ProductsCard = ({ image, label, weight, price }) => {
+const ProductsCard = ({ image, label, weight, price, onShowComment }) => {
   const cartCtx = useContext(CartContext);
 
   const addToCartHandler = () => {
     const item = {
-      id: Math.random().toString(), 
+      id: Math.random().toString(),
       label: label,
       price: price,
       weight: weight,
@@ -25,7 +25,11 @@ const ProductsCard = ({ image, label, weight, price }) => {
         <p className={styles.price}>{price}</p>
       </div>
       <form className={styles.dishBtnSection}>
-        <Button className={styles.dishBtn} variant="contained">
+        <Button
+          className={styles.dishBtn}
+          variant="contained"
+          onClick={onShowComment}
+        >
           Коментар
         </Button>
         <Button

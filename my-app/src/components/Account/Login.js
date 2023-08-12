@@ -6,7 +6,7 @@ const Login = (props) => {
     <Modal>
       <div className={styles.container}>
         <div className={styles.loginHeader}>
-          <h2 className={styles.head}>Log in</h2>
+          <h2 className={styles.head}>Влез в профила си</h2>
           <button className={styles.closeBtn} onClick={props.onClose}>
             X
           </button>
@@ -16,21 +16,21 @@ const Login = (props) => {
             className={styles.input}
             type="text"
             id="username"
-            placeholder="Username"
+            placeholder="Имейл"
           />
           <input
             className={styles.input}
             type="password"
             id="password"
-            placeholder="Password"
+            placeholder="Парола"
           />
-          <span className={styles.forgotPassword}>Forgot your password?</span>
+          <span className={styles.forgotPassword}>Забравена парола?</span>
           <button className={styles.loginBtn} type="submit">
-            Login
+            Вход
           </button>
         </form>
         <div className={styles.bottomPart}>
-          <span>Already have an account?</span>
+          <span>Нямаш профил? Регистрирай се сега!</span>
         </div>
       </div>
     </Modal>
