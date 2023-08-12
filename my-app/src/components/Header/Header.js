@@ -9,6 +9,7 @@ const Header = (props) => {
     <Box className={styles.headerSection}>
       <div className={styles.menu}>
         <MenuIcon
+          onClick={props.onShowFoldMenu}
           style={{
             color: "var(--buttons-color)",
             fontSize: "30px",

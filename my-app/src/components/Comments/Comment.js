@@ -3,7 +3,7 @@ import styles from "./comments.module.css";
 
 const Comment = (props) => {
   return (
-    <Modal>
+    <Modal onClose={props.onClose}>
       <div>
         <div className={styles.commentsHeader}>
           <h2 className={styles.head}>Оставете Коментар</h2>

@@ -3,7 +3,7 @@ import styles from "./login.module.css";
 
 const Login = (props) => {
   return (
-    <Modal>
+    <Modal onClose={props.onClose}>
       <div className={styles.container}>
         <div className={styles.loginHeader}>
           <h2 className={styles.head}>Влез в профила си</h2>
