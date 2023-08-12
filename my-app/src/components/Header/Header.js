@@ -19,7 +19,7 @@ const Header = (props) => {
         <p className={styles.title}>Blankfactor</p>
       </div>
       <div className={styles.icons}>
-        <AccountButton />
+        <AccountButton onClick={props.onLogin} />
         <CartButton onClick={props.onShowCart} />
       </div>
     </Box>

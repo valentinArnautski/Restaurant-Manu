@@ -1,0 +1,89 @@
+.loginHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--second-color);
+  padding-bottom: 20px;
+}
+
+.head {
+  margin: 0;
+  color: var(--second-color);
+  font-weight: bold;
+}
+
+.closeBtn {
+  color: white;
+  border-radius: 50%;
+  background-color: var(--second-color);
+  padding: 0.25rem 0.6rem;
+}
+
+.submitForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--second-color);
+}
+
+.input {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #f3f0f0;
+  border: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  width: 50%;
+}
+
+.loginBtn {
+  padding: 10px;
+  border-radius: 10px;
+  width: 25%;
+  margin-top: 15px;
+  border: none;
+  background-color: var(--second-color);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.loginBtn:hover,
+.loginBtn:active {
+  background-color: var(--third-color);
+  border-color: var(--third-color);
+  color: white;
+}
+
+.bottomPart {
+  padding: 20px;
+  text-align: center;
+  color: var(--second-color);
+  font-weight: 600;
+}
+
+.bottomPart:hover {
+  font-weight: bold;
+}
+
+.forgotPassword {
+  color: var(--second-color);
+  font-weight: 600;
+}
+
+.forgotPassword:hover {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 80%;
+  }
+
+  .loginBtn {
+    width: 50%;
+  }
+}
