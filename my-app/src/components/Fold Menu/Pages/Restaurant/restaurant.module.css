@@ -1,1 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.backgroundImage {
+  position: relative; /* Added this to make pseudo-element positioned relative to this element */
+  min-height: 100vh;
+}
+
+.backgroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.logo {
+  font-family: "MarckScripts", sans-serif;
+  font-size: 54px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.par {
+  font-family: "MarckScripts", sans-serif;
+  font-size: 1.8rem;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 0;
+  color: white;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 80%;
+}
+
+.contactHeader {
+  font-family: "MarckScripts", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: solid 3px var(--second-color);
+  text-align: center;
+  color: white;
+}
+
+.contactInfo {
+  font-size: 30px;
+  font-family: "MarckScripts", sans-serif;
+  margin: 0;
+  color: white;
+}

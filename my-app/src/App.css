@@ -10,12 +10,18 @@
   --input-fields-color: #fffcf6;
   --error-color: #c43333;
   --borders-color: #ccc;
-
-  background-color: var(--input-fields-color);
 }
 
 @font-face {
   font-family: "MarckScripts";
   src: url("./assets/Fonts/Marck_Script/MarckScript-Regular.ttf")
     format("truetype");
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  opacity: inherit;
+  opacity: 90%;
 }
