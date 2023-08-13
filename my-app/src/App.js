@@ -8,6 +8,7 @@ import Login from "./components/Account/Login";
 import Comment from "./components/Comments/Comment";
 import FoldMenu from "./components/Fold Menu/FoldMenu";
 import Restaurant from "./components/Fold Menu/Pages/Restaurant/Restaurant";
+import Review from "./components/Fold Menu/Pages/Review/Review";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -15,6 +16,7 @@ function App() {
   const [commentsIsShown, setCommentsIsShown] = useState(false);
   const [foldMenuIsShown, setFoldMenuIsShown] = useState(false);
   const [showRestaurant, setShowRestaurant] = useState(false);
+  const [reviewIsShown, setReviewIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -53,6 +55,11 @@ function App() {
     setFoldMenuIsShown(false);
   };
 
+  const showReviewHandler = () => {
+    setReviewIsShown(true);
+    setFoldMenuIsShown(false); // Assuming you want to hide the fold menu when showing the review
+  };
+
   return (
     <CartProvider>
       <div className="App">
@@ -68,10 +75,14 @@ function App() {
           {foldMenuIsShown && (
             <FoldMenu
               onShowRestaurant={showRestaurantHandler}
+              onShowReviews={showReviewHandler}
               onClose={hideFoldMenuHandler}
             />
           )}
-          {showRestaurant ? (
+
+          {reviewIsShown ? (
+            <Review />
+          ) : showRestaurant ? (
             <Restaurant />
           ) : (
             <Menu onShowComment={showCommentHandler} />

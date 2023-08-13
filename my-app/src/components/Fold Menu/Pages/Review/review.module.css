@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundImage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.backgroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.header {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: var(--borders-color);
+  border-radius: 10px;
+  opacity: 0.9;
+  padding: 20px;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.title {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.emojiContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.emojiButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  min-width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emojiButton:hover {
+  transform: scale(1.1);
+}
+
+.yesNoContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.yesNoButton {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yesNoButton:hover {
+  background-color: var(--secondary-color);
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.inputField {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.emojiContainer,
+.yesNoContainer,
+.inputContainer {
+  margin-top: 15px;
+}

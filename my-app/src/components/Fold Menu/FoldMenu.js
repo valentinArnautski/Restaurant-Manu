@@ -26,7 +26,9 @@ const FoldMenu = (props) => {
 
       <div className={styles.buttonContainer}>
         <MdRateReview className={styles.icon} />
-        <button className={styles.button}>Оцени ни</button>
+        <button className={styles.button} onClick={props.onShowReviews}>
+          Reviews
+        </button>
       </div>
 
       <div className={styles.buttonContainer}>
