@@ -1,4 +1,4 @@
-import { Button, useThemeProps } from "@mui/material";
+import { Button } from "@mui/material";
 import styles from "./productCard.module.css";
 import { useContext } from "react";
 import CartContext from "../../store/cartContext";
