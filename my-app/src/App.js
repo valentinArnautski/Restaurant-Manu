@@ -9,6 +9,7 @@ import Comment from "./components/Comments/Comment";
 import FoldMenu from "./components/Fold Menu/FoldMenu";
 import Restaurant from "./components/Fold Menu/Pages/Restaurant/Restaurant";
 import Review from "./components/Fold Menu/Pages/Review/Review";
+import SearchBar from "./components/Fold Menu/Pages/Search/SearchBar";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -17,6 +18,7 @@ function App() {
   const [foldMenuIsShown, setFoldMenuIsShown] = useState(false);
   const [showRestaurant, setShowRestaurant] = useState(false);
   const [reviewIsShown, setReviewIsShown] = useState(false);
+  const [searchBarIsShown, setSearchBarIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -62,6 +64,10 @@ function App() {
     setFoldMenuIsShown(false);
   };
 
+  const showSearchBarHandler = () => {
+    setSearchBarIsShown(true);
+  };
+
   const showMenuHandler = () => {
     setReviewIsShown(false);
     setShowRestaurant(false);
@@ -74,17 +80,24 @@ function App() {
         {cartIsShown && <Cart onClose={hideCartHandler} />}
         {loginPageShown && <Login onClose={closeLoginPage} />}
         {commentsIsShown && <Comment onClose={closeCommentHandler} />}
-        <Header
-          onShowCart={showCartHandler}
-          onLogin={showLoginPage}
-          onShowFoldMenu={showFoldMenuHandler}
-          onReturnToMenu={showMenuHandler}
-        />
+
+        {searchBarIsShown ? (
+          <SearchBar />
+        ) : (
+          <Header
+            onShowCart={showCartHandler}
+            onLogin={showLoginPage}
+            onShowFoldMenu={showFoldMenuHandler}
+            onReturnToMenu={showMenuHandler}
+          />
+        )}
+
         <main>
           {foldMenuIsShown && (
             <FoldMenu
               onShowRestaurant={showRestaurantHandler}
               onShowReviews={showReviewHandler}
+              onShowSearchBar={showSearchBarHandler}
               onReturnToMenu={showMenuHandler}
               onClose={hideFoldMenuHandler}
             />

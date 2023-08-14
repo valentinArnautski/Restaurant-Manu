@@ -14,7 +14,9 @@ const FoldMenu = (props) => {
     <div className={styles.container} onClick={handleClose}>
       <div className={styles.buttonContainer}>
         <FaSearch className={styles.icon} />
-        <button className={styles.button}>Търсене на продукт</button>
+        <button className={styles.button} onClick={props.onShowSearchBar}>
+          Търсене на продукт
+        </button>
       </div>
 
       <div className={styles.buttonContainer}>

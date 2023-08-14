@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  height: 50px;
+}
+
+.searchInput {
+  border: none;
+  height: 100%;
+  padding-left: 20px;
+  color: var(--second-color);
+  font-size: 18px;
+}
+
+.searchInput::placeholder {
+  color: var(--second-color);
+  font-weight: bold;
+}
+
+.icon {
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  color: var(--second-color);
+  margin: 0;
+}
