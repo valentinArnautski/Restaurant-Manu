@@ -33,7 +33,9 @@ const FoldMenu = (props) => {
 
       <div className={styles.buttonContainer}>
         <IoIosInformation className={styles.iconI} />
-        <button className={styles.button}>За нас</button>
+        <button className={styles.button} onClick={props.onReturnToMenu}>
+          Menu
+        </button>
       </div>
     </div>
   );

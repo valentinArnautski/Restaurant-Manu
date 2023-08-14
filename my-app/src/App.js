@@ -52,12 +52,20 @@ function App() {
 
   const showRestaurantHandler = () => {
     setShowRestaurant(true);
+    setReviewIsShown(false);
     setFoldMenuIsShown(false);
   };
 
   const showReviewHandler = () => {
     setReviewIsShown(true);
-    setFoldMenuIsShown(false); // Assuming you want to hide the fold menu when showing the review
+    setShowRestaurant(false);
+    setFoldMenuIsShown(false);
+  };
+
+  const showMenuHandler = () => {
+    setReviewIsShown(false);
+    setShowRestaurant(false);
+    setFoldMenuIsShown(false);
   };
 
   return (
@@ -70,21 +78,21 @@ function App() {
           onShowCart={showCartHandler}
           onLogin={showLoginPage}
           onShowFoldMenu={showFoldMenuHandler}
+          onReturnToMenu={showMenuHandler}
         />
         <main>
           {foldMenuIsShown && (
             <FoldMenu
               onShowRestaurant={showRestaurantHandler}
               onShowReviews={showReviewHandler}
+              onReturnToMenu={showMenuHandler}
               onClose={hideFoldMenuHandler}
             />
           )}
 
-          {reviewIsShown ? (
-            <Review />
-          ) : showRestaurant ? (
-            <Restaurant />
-          ) : (
+          {reviewIsShown && <Review />}
+          {showRestaurant && <Restaurant />}
+          {!reviewIsShown && !showRestaurant && (
             <Menu onShowComment={showCommentHandler} />
           )}
         </main>

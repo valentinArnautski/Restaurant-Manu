@@ -17,7 +17,9 @@ const Header = (props) => {
         />
       </div>
       <div className={styles.header}>
-        <p className={styles.title}>Blankfactor</p>
+        <p className={styles.title} onClick={props.onReturnToMenu}>
+          Blankfactor
+        </p>
       </div>
       <div className={styles.icons}>
         <AccountButton onClick={props.onLogin} />
