@@ -9,7 +9,7 @@ const wineSections = [
         weight: "150мл",
         price: "15.00лв",
         image:
-          "https://justrichest.com/wp-content/uploads/1548072519-3083-Dom-Perignon.jpg",
+          "https://www.adorechampagne.com/wp-content/uploads/the_vintage_greats_rose_collection_6x75cl_blank_vintages.jpg",
       },
       {
         label: "Extra Brut",

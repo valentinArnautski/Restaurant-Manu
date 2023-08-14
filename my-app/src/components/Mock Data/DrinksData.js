@@ -9,14 +9,14 @@ const drinkSections = [
         weight: "330мл",
         price: "3.00лв",
         image:
-          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
+          "https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8Mwex-aEdG--_vUVw4SGFIEcTdgLaveda2LyhpqY7FcWj1Qcz1k24zXJhcoqpAv9-FJZ_EApztQS-7BXhObpgCNHXcjdHws2ZybBt7YjRpi-0cnM_gBp2TU=s0-d",
       },
       {
         label: "Sprite",
         weight: "330мл",
         price: "3.00лв",
         image:
-          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
+          "https://www.cafes-storme.be/Uploads/Produits/Boissons-rafraichissantes/sptire-can-24x33cl.jpg?maxwidth=480&maxheight=480&quality=90&format=jpg&scale=both",
       },
       {
         label: "Fanta",

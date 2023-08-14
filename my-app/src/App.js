@@ -56,22 +56,30 @@ function App() {
     setShowRestaurant(true);
     setReviewIsShown(false);
     setFoldMenuIsShown(false);
+    setSearchBarIsShown(false);
   };
 
   const showReviewHandler = () => {
     setReviewIsShown(true);
     setShowRestaurant(false);
     setFoldMenuIsShown(false);
+    setSearchBarIsShown(false);
   };
 
   const showSearchBarHandler = () => {
+    setFoldMenuIsShown(false);
     setSearchBarIsShown(true);
+  };
+
+  const closeSearchBarHandler = () => {
+    setSearchBarIsShown(false);
   };
 
   const showMenuHandler = () => {
     setReviewIsShown(false);
     setShowRestaurant(false);
     setFoldMenuIsShown(false);
+    setSearchBarIsShown(false);
   };
 
   return (
@@ -82,7 +90,7 @@ function App() {
         {commentsIsShown && <Comment onClose={closeCommentHandler} />}
 
         {searchBarIsShown ? (
-          <SearchBar />
+          <SearchBar onCloseSearchBar={closeSearchBarHandler} />
         ) : (
           <Header
             onShowCart={showCartHandler}
