@@ -10,6 +10,8 @@ import FoldMenu from "./components/Fold Menu/FoldMenu";
 import Restaurant from "./components/Fold Menu/Pages/Restaurant/Restaurant";
 import Review from "./components/Fold Menu/Pages/Review/Review";
 import SearchBar from "./components/Fold Menu/Pages/Search/SearchBar";
+import Register from "./components/Account/Register";
+import ForgotPassword from "./components/Account/ForgotPassword";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -19,6 +21,8 @@ function App() {
   const [showRestaurant, setShowRestaurant] = useState(false);
   const [reviewIsShown, setReviewIsShown] = useState(false);
   const [searchBarIsShown, setSearchBarIsShown] = useState(false);
+  const [registerIsShown, setRegisterIsShown] = useState(false);
+  const [forgotPasswordIsShown, setForgotPasswordIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -28,11 +32,12 @@ function App() {
     setCartIsShown(false);
   };
 
-  const showLoginPage = () => {
+  const showLoginPageHandler = () => {
     setLoginPageShown(true);
+    setRegisterIsShown(false);
   };
 
-  const closeLoginPage = () => {
+  const closeLoginPageHandler = () => {
     setLoginPageShown(false);
   };
 
@@ -82,11 +87,52 @@ function App() {
     setSearchBarIsShown(false);
   };
 
+  const showRegisterHanlder = () => {
+    setRegisterIsShown(true);
+    setLoginPageShown(false);
+    setForgotPasswordIsShown(false);
+  };
+
+  const hideRegisterHanlder = () => {
+    setRegisterIsShown(false);
+  };
+
+  const showForgotPasswordHandler = () => {
+    setForgotPasswordIsShown(true);
+    setLoginPageShown(false);
+  };
+
+  const hideForgotPasswordHandler = () => {
+    setForgotPasswordIsShown(false);
+  };
+
   return (
     <CartProvider>
       <div className="App">
         {cartIsShown && <Cart onClose={hideCartHandler} />}
-        {loginPageShown && <Login onClose={closeLoginPage} />}
+
+        {loginPageShown && (
+          <Login
+            onClose={closeLoginPageHandler}
+            onRegister={showRegisterHanlder}
+            onForgot={showForgotPasswordHandler}
+          />
+        )}
+
+        {registerIsShown && (
+          <Register
+            onClose={hideRegisterHanlder}
+            onLogin={showLoginPageHandler}
+          />
+        )}
+
+        {forgotPasswordIsShown && (
+          <ForgotPassword
+            onClose={hideForgotPasswordHandler}
+            onRegister={showRegisterHanlder}
+          />
+        )}
+
         {commentsIsShown && <Comment onClose={closeCommentHandler} />}
 
         {searchBarIsShown ? (
@@ -94,7 +140,7 @@ function App() {
         ) : (
           <Header
             onShowCart={showCartHandler}
-            onLogin={showLoginPage}
+            onLogin={showLoginPageHandler}
             onShowFoldMenu={showFoldMenuHandler}
             onReturnToMenu={showMenuHandler}
           />

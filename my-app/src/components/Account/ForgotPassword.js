@@ -1,12 +1,12 @@
 import Modal from "../UI Elements/Modal";
 import styles from "./login.module.css";
 
-const Login = (props) => {
+const ForgotPassword = (props) => {
   return (
     <Modal onClose={props.onClose}>
       <div className={styles.container}>
         <div className={styles.loginHeader}>
-          <h2 className={styles.head}>Влез в профила си</h2>
+          <h2 className={styles.head}>Забравена парола</h2>
           <button className={styles.closeBtn} onClick={props.onClose}>
             X
           </button>
@@ -18,17 +18,8 @@ const Login = (props) => {
             id="username"
             placeholder="Имейл"
           />
-          <input
-            className={styles.input}
-            type="password"
-            id="password"
-            placeholder="Парола"
-          />
-          <span className={styles.forgotPassword} onClick={props.onForgot}>
-            Забравена парола?
-          </span>
           <button className={styles.loginBtn} type="submit">
-            Вход
+            Изпрати
           </button>
         </form>
         <div className={styles.bottomPart}>
@@ -41,4 +32,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

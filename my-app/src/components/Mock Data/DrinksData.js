@@ -9,28 +9,28 @@ const drinkSections = [
         weight: "330мл",
         price: "3.00лв",
         image:
-          "https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8Mwex-aEdG--_vUVw4SGFIEcTdgLaveda2LyhpqY7FcWj1Qcz1k24zXJhcoqpAv9-FJZ_EApztQS-7BXhObpgCNHXcjdHws2ZybBt7YjRpi-0cnM_gBp2TU=s0-d",
+          "https://www.aladinfoods.bg/files/images/1506/7_Up_330ml_new.png",
       },
       {
         label: "Sprite",
         weight: "330мл",
         price: "3.00лв",
         image:
-          "https://www.cafes-storme.be/Uploads/Produits/Boissons-rafraichissantes/sptire-can-24x33cl.jpg?maxwidth=480&maxheight=480&quality=90&format=jpg&scale=both",
+          "https://www.aladinfoods.bg/files/images/1202/1.Pepsi_330_580x500.png",
       },
       {
         label: "Fanta",
         weight: "330мл",
         price: "3.00лв",
         image:
-          "https://www.tuktukdubai.com/wp-content/uploads/2023/06/Soft-Drinks.webp",
+          "https://www.aladinfoods.bg/files/images/1203/1.Mirinda_330_580x500.png",
       },
     ],
   },
   {
     label: "Алкохол",
     image: "https://pngimg.com/uploads/whisky/whisky_PNG53.png",
-    dishes: [
+    drinks: [
       {
         label: "Whisky",
         weight: "50мл",
@@ -55,7 +55,7 @@ const drinkSections = [
     label: "Вино",
     image:
       "https://media.winefolly.com/2014-willamette-valley-vineyards-whole-cluster-pinot-noir-oregon.jpg",
-    dishes: [
+    drinks: [
       {
         label: "Chardonnay",
         weight: "150мл",
@@ -83,7 +83,7 @@ const drinkSections = [
     label: "Коктейли",
     image:
       "https://www.intoxicatingbeauty.com/wp-content/uploads/2019/05/shutterstock_1012578274.jpg",
-    dishes: [
+    drinks: [
       {
         label: "Mojito",
         weight: "250мл",
