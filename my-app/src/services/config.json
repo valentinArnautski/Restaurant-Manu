@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://restaurant-menu-c92c5-default-rtdb.europe-west1.firebasedatabase.app/",
+    "meals": "meals.json",
+    "drinks": "drinks.json",
+    "wines": "wines.json"
+  }

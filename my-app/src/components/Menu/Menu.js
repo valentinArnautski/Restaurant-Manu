@@ -1,19 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, ThemeProvider } from "@mui/material";
 import styles from "../menu.module.css";
 import { theme } from "../colorTheme";
-import foodSections from "../Mock Data/FoodData";
-import drinkSections from "../Mock Data/DrinksData";
-import wineSections from "../Mock Data/WineData";
 import FoodSelection from "../Food/FoodSelection";
 import DrinkSelection from "../Drinks/DrinksSelection";
 import WineSelection from "../Wines/WineSelection";
 import MenuContentBtns from "./MenuContentBtns";
+import { getDrinks, getMeals, getWines } from "../../services/fetchService";
 
 export const Menu = ({ onShowComment }) => {
   const [activeMenuItem, setActiveMenuItem] = useState("Ястия");
   const [selectedMenu, setSelectedMenu] = useState(null);
-  const [selectedSection, setSelectedSection] = useState(foodSections);
+  const [mealsData, setMealsData] = useState([]);
+  const [drinksData, setDrinksData] = useState([]);
+  const [winesData, setWinesData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const mealsResponse = await getMeals();
+        setMealsData(mealsResponse);
+
+        const drinksResponse = await getDrinks();
+        setDrinksData(drinksResponse);
+
+        const winesResponse = await getWines();
+        setWinesData(winesResponse);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleMenuSelect = (menu) => {
     setSelectedMenu(menu.label);
@@ -21,15 +40,7 @@ export const Menu = ({ onShowComment }) => {
 
   const handleMenuItemClick = (menuItem) => {
     setActiveMenuItem(menuItem);
-    setSelectedMenu(null); // Reset the selected menu when a main menu category is clicked
-
-    if (menuItem === "Ястия") {
-      setSelectedSection(foodSections);
-    } else if (menuItem === "Напитки") {
-      setSelectedSection(drinkSections);
-    } else if (menuItem === "Вино") {
-      setSelectedSection(wineSections);
-    }
+    setSelectedMenu(null);
   };
 
   return (
@@ -71,7 +82,15 @@ export const Menu = ({ onShowComment }) => {
 
             {!selectedMenu && (
               <MenuContentBtns
-                selectedSection={selectedSection}
+                selectedSection={
+                  activeMenuItem === "Напитки"
+                    ? drinksData
+                    : activeMenuItem === "Ястия"
+                    ? mealsData
+                    : activeMenuItem === "Вино"
+                    ? winesData
+                    : []
+                }
                 handleMenuSelect={handleMenuSelect}
               />
             )}
@@ -82,19 +101,19 @@ export const Menu = ({ onShowComment }) => {
               <FoodSelection
                 onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
-                foodSections={foodSections}
+                foodSections={mealsData}
               />
             ) : activeMenuItem === "Вино" ? (
               <WineSelection
                 onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
-                wineSections={wineSections}
+                wineSections={winesData}
               />
             ) : (
               <DrinkSelection
                 onShowComment={onShowComment}
                 selectedMenu={selectedMenu}
-                drinkSections={drinkSections}
+                drinkSections={drinksData}
               />
             ))}
         </Box>
