@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #eaeaea;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.img {
+  width: 70px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.img2 {
+  width: 90px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.tickBoxLabel {
+  font-size: 20px;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+.tickBox {
+  width: 15px;
+  height: 15px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.paypalButton {
+  background-color: #0070ba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.paypalButton:hover {
+  background-color: #005fa3;
+}
