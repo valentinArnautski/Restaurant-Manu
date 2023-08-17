@@ -38,22 +38,24 @@ const Cart = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      {cartItems}
-      <div className={styles.total}>
-        <span>Обща Сума</span>
-        <span>{totalAmount.toFixed(2)}лв</span>
-      </div>
-      {paymentIsShown && <Payment />}
+      <div className={styles.modalContent}>
+        {cartItems}
+        <div className={styles.total}>
+          <span>Обща Сума</span>
+          <span>{totalAmount.toFixed(2)}лв</span>
+        </div>
+        {paymentIsShown && <Payment />}
 
-      <div className={styles.actions}>
-        <button className={styles.buttonAlt} onClick={props.onClose}>
-          Затвори
-        </button>
-        {hasItems && (
-          <button className={styles.button} onClick={orderHandler}>
-            Поръчай
+        <div className={styles.actions}>
+          <button className={styles.buttonAlt} onClick={props.onClose}>
+            Затвори
           </button>
-        )}
+          {hasItems && (
+            <button className={styles.button} onClick={orderHandler}>
+              Поръчай
+            </button>
+          )}
+        </div>
       </div>
     </Modal>
   );
