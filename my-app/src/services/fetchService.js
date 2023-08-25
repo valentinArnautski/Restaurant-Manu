@@ -1,6 +1,5 @@
 import { fetchWrapper } from "./fetchWrapper";
 import config from "./config.json";
-import { registerUrl, signInUrl } from "../components/Constants/constants";
 
 export const getMeals = async () => {
   return fetchWrapper.get(`${config.baseUrl}${config.meals}`);
@@ -15,11 +14,17 @@ export const getWines = async () => {
 };
 
 export const registerUser = async (userData) => {
-  const response = await fetchWrapper.post(registerUrl, userData);
+  const apiKey = "AIzaSyCg-aGXdDyW664xnInlmReVrGJM194tIDI";
+  const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
+
+  const response = await fetchWrapper.post(url, userData);
   return response;
 };
 
 export const loginUser = async (userData) => {
-  const response = await fetchWrapper.post(signInUrl, userData);
+  const apiKey = "AIzaSyCg-aGXdDyW664xnInlmReVrGJM194tIDI";
+  const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
+
+  const response = await fetchWrapper.post(url, userData);
   return response;
 };

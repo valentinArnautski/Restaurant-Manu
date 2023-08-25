@@ -1,8 +1,11 @@
-import { TextField } from "@mui/material";
+import { Button, IconButton, TextField } from "@mui/material";
 import Modal from "../UI Elements/Modal";
 import styles from "./login.module.css";
 import { useState } from "react";
 import { loginUser } from "../../services/fetchService";
+import Manager from "./Manager";
+import CloseButton from "../UI Elements/CloseButton";
+import { Cancel } from "@mui/icons-material";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -30,9 +33,10 @@ const Login = (props) => {
 
       const response = await loginUser(userData);
       setIsLogged(true);
-      console.log("Registration successful:", response);
+      console.log("Login successful:", response);
     } catch (error) {
-      console.error("Registration error:", error);
+      setLoginError("Грешни данни за вход.");
+      console.error("Login error:", error);
     }
   };
 
@@ -40,42 +44,54 @@ const Login = (props) => {
     <Modal onClose={props.onClose}>
       <div className={styles.container}>
         <div className={styles.loginHeader}>
-          <h2 className={styles.head}>Влез в профила си</h2>
-          <button className={styles.closeBtn} onClick={props.onClose}>
-            X
-          </button>
+          {isLogged ? (
+            <h2 className={styles.head}>{`Добре дошъл, ${email}`}</h2>
+          ) : (
+            <h2 className={styles.head}>Влез в профила си</h2>
+          )}
+          <CloseButton onClose={props.onClose} />
         </div>
-        <form className={styles.submitForm} onSubmit={handleLoginInput}>
-          <TextField
-            required
-            label="Имейл"
-            variant="outlined"
-            fullWidth
-            onChange={handleEmailInput}
-            value={email}
-            margin="normal"
-          />
-          <TextField
-            required
-            label="Парола"
-            variant="outlined"
-            type="password"
-            fullWidth
-            value={password}
-            margin="normal"
-            onChange={handlePasswordInput}
-          />
-          <span className={styles.forgotPassword} onClick={props.onForgot}>
-            Забравена парола?
-          </span>
-          <button className={styles.loginBtn} type="submit">
-            Вход
-          </button>
-        </form>
+        {isLogged ? (
+          <Manager isLogged={isLogged} />
+        ) : (
+          <form className={styles.submitForm} onSubmit={handleLoginInput}>
+            <TextField
+              required
+              label="Имейл"
+              variant="outlined"
+              fullWidth
+              onChange={handleEmailInput}
+              value={email}
+              margin="normal"
+            />
+            <TextField
+              required
+              label="Парола"
+              variant="outlined"
+              type="password"
+              fullWidth
+              value={password}
+              margin="normal"
+              onChange={handlePasswordInput}
+            />
+            <div className={styles.error}>{loginError}</div>
+            <span className={styles.forgotPassword} onClick={props.onForgot}>
+              Забравена парола?
+            </span>
+
+            <Button className={styles.loginBtn} type="submit">
+              Вход
+            </Button>
+          </form>
+        )}
         <div className={styles.bottomPart}>
-          <span onClick={props.onRegister}>
-            Нямаш профил? Регистрирай се сега!
-          </span>
+          {isLogged ? (
+            <span>Благодарим Ви, че избрахте нас!</span>
+          ) : (
+            <span onClick={props.onRegister}>
+              Нямаш профил? Регистрирай се сега!
+            </span>
+          )}
         </div>
       </div>
     </Modal>
