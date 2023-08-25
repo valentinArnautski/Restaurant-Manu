@@ -8,21 +8,59 @@ const Register = (props) => {
   const [isChecked, setIsChecked] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [tickboxError, setTickboxError] = useState("");
 
   const handleCheckboxChange = () => {
     setIsChecked((prevChecked) => !prevChecked);
+    setTickboxError("");
   };
 
   const handlEmailInput = (e) => {
     setEmail(e.target.value);
+    setEmailError("");
   };
 
   const handlePasswordInput = (e) => {
     setPassword(e.target.value);
+    setPasswordError("");
+  };
+
+  const validateEmail = (inputEmail) => {
+    if (!inputEmail.includes("@")) {
+      setEmailError("Невалиден имейл адрес.");
+      return false;
+    }
+    setEmailError("");
+    return true;
+  };
+
+  const validatePassword = (inputPassword) => {
+    const passwordPattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordPattern.test(inputPassword)) {
+      setPasswordError(
+        "Паролата трябва да бъде дълга поне 8 символа и да съдържа главна и малка буква, цифра и специален символ."
+      );
+      return false;
+    }
+    setPasswordError("");
+    return true;
   };
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+
+    if (!validateEmail(email) || !validatePassword(password)) {
+      return;
+    }
+
+    if (!isChecked) {
+      setTickboxError("Трябва да приемете условията за ползване.");
+      return;
+    }
+
     try {
       const userData = {
         email,
@@ -35,7 +73,6 @@ const Register = (props) => {
       console.error("Registration error:", error);
     }
   };
-
   return (
     <Modal onClose={props.onClose}>
       <div className={styles.container}>
@@ -47,20 +84,25 @@ const Register = (props) => {
         </div>
         <form className={styles.submitForm} onSubmit={handleRegistration}>
           <TextField
+            required
             label="Име и Фамилия"
             variant="outlined"
             fullWidth
             margin="normal"
           />
           <TextField
+            required
             label="Имейл"
             variant="outlined"
             fullWidth
             value={email}
             onChange={handlEmailInput}
             margin="normal"
+            error={emailError.length > 0}
+            helperText={emailError}
           />
           <TextField
+            required
             label="Парола"
             variant="outlined"
             type="password"
@@ -68,6 +110,8 @@ const Register = (props) => {
             value={password}
             onChange={handlePasswordInput}
             margin="normal"
+            error={passwordError.length > 0}
+            helperText={passwordError}
           />
           <label className={styles.tickBoxLabel}>
             <input
@@ -78,6 +122,7 @@ const Register = (props) => {
             />
             Съгласен съм с УСЛОВИЯТА ЗА ПОЛЗВАНЕ
           </label>
+          {tickboxError && <p className={styles.errorText}>{tickboxError}</p>}
           <Button className={styles.loginBtn} type="submit">
             Регистрация
           </Button>

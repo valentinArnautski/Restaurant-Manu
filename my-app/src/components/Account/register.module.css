@@ -13,7 +13,7 @@
 }
 
 .closeBtn {
-  color: white;
+  color: var(--bg-color);
   border-radius: 50%;
   background-color: var(--second-color);
   padding: 0.25rem 0.6rem;
@@ -61,7 +61,7 @@
   margin-top: 15px;
   border: none;
   background-color: var(--second-color);
-  color: white;
+  color: var(--bg-color);
   font-weight: bold;
   font-size: 18px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -71,7 +71,7 @@
 .loginBtn:active {
   background-color: var(--third-color);
   border-color: var(--third-color);
-  color: white;
+  color: var(--bg-color);
 }
 
 .bottomPart {
@@ -85,13 +85,8 @@
   font-weight: bold;
 }
 
-.forgotPassword {
-  color: var(--second-color);
-  font-weight: 600;
-}
-
-.forgotPassword:hover {
-  font-weight: bold;
+.errorText {
+  color: var(--error-color);
 }
 
 @media (max-width: 768px) {
