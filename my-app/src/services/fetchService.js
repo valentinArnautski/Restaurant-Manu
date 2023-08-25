@@ -12,3 +12,11 @@ export const getDrinks = async () => {
 export const getWines = async () => {
   return fetchWrapper.get(`${config.baseUrl}${config.wines}`);
 };
+
+export const registerUser = async (userData) => {
+  const apiKey = "AIzaSyCg-aGXdDyW664xnInlmReVrGJM194tIDI";
+  const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
+
+  const response = await fetchWrapper.post(url, userData); 
+  return response;
+};
