@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./debitCard.module.css";
+import { TextField } from "@mui/material";
 
 const DebitCard = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -59,54 +60,61 @@ const DebitCard = () => {
   return (
     <form className={styles.submitForm} onSubmit={handleSubmit}>
       <div className={styles.inputContainer}>
-        <input
+        <TextField
           className={`${styles.input} ${errors.cardNumber ? styles.error : ""}`}
           type="text"
           id="card"
-          placeholder="Card Number"
+          label="Card Number"
+          variant="outlined"
           value={cardNumber}
           onChange={handleInputChange}
+          fullWidth
+          error={!!errors.cardNumber}
+          helperText={errors.cardNumber && "Invalid card number"}
         />
-        {errors.cardNumber && (
-          <p className={styles.errorText}>Invalid card number</p>
-        )}
       </div>
 
       <div className={styles.inputContainer}>
-        <input
+        <TextField
           className={styles.input}
           type="text"
           id="names"
-          placeholder="Cardholder's Name"
+          label="Cardholder's Name"
+          variant="outlined"
           value={cardHolderName}
           onChange={handleInputChange}
+          fullWidth
         />
       </div>
 
       <div className={styles.inputContainer}>
-        <input
+        <TextField
           className={`${styles.input} ${errors.expiration ? styles.error : ""}`}
           type="text"
           id="expiration"
-          placeholder="Expiration (MM/YY)"
+          label="Expiration (MM/YY)"
+          variant="outlined"
           value={expiration}
           onChange={handleInputChange}
+          fullWidth
+          error={!!errors.expiration}
+          helperText={errors.expiration && "Invalid expiration date"}
         />
-        {errors.expiration && (
-          <p className={styles.errorText}>Invalid expiration date</p>
-        )}
       </div>
 
       <div className={styles.inputContainer}>
-        <input
+        <TextField
           className={`${styles.input} ${errors.cvv ? styles.error : ""}`}
           type="password"
           id="cvv"
-          placeholder="CVV"
+          label="CVV"
+          variant="outlined"
           value={cvv}
           onChange={handleInputChange}
+          fullWidth
+          error={!!errors.cvv}
+          helperText={errors.cvv && "Invalid CVV"}
         />
-        {errors.cvv && <p className={styles.errorText}>Invalid CVV</p>}
       </div>
     </form>
   );

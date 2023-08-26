@@ -10,16 +10,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 90%;
   margin-bottom: 12px;
 }
 
 .input {
   padding: 15px;
   border-radius: 10px;
-  background-color: #f3f0f0;
-  border: none;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
@@ -33,4 +30,3 @@
   margin-top: 5px;
   margin-bottom: 10px;
 }
-
