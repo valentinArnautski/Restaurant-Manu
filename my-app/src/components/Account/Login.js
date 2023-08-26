@@ -86,14 +86,16 @@ const Login = (props) => {
             <span className={styles.or}>ИЛИ</span>
           </form>
         )}
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-        />
+        {!isLogged && (
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
+        )}
 
         <div className={styles.bottomPart}>
           {isLogged ? (

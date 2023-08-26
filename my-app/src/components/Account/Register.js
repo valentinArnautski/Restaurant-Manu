@@ -3,6 +3,7 @@ import Modal from "../UI Elements/Modal";
 import styles from "./register.module.css";
 import { registerUser } from "../../services/fetchService";
 import { Button, TextField } from "@mui/material";
+import CloseButton from "../UI Elements/CloseButton";
 
 const Register = (props) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -78,9 +79,7 @@ const Register = (props) => {
       <div className={styles.container}>
         <div className={styles.loginHeader}>
           <h2 className={styles.head}>Регистрирай се</h2>
-          <button className={styles.closeBtn} onClick={props.onClose}>
-            X
-          </button>
+          <CloseButton onClose={props.onClose} />
         </div>
         <form className={styles.submitForm} onSubmit={handleRegistration}>
           <TextField

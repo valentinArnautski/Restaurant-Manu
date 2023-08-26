@@ -28,3 +28,18 @@ export const loginUser = async (userData) => {
   const response = await fetchWrapper.post(url, userData);
   return response;
 };
+
+// fetchService.js
+
+export const resetPassword = async (email) => {
+  const apiKey = "AIzaSyCg-aGXdDyW664xnInlmReVrGJM194tIDI";
+  const url = `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${apiKey}`;
+
+  const payload = {
+    requestType: "PASSWORD_RESET",
+    email: email,
+  };
+
+  const response = await fetchWrapper.post(url, payload);
+  return response;
+};
