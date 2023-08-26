@@ -6,6 +6,7 @@ import { loginUser } from "../../services/fetchService";
 import Manager from "./Manager";
 import CloseButton from "../UI Elements/CloseButton";
 import { Cancel } from "@mui/icons-material";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -80,10 +81,20 @@ const Login = (props) => {
             </span>
 
             <Button className={styles.loginBtn} type="submit">
-              Вход
+              Влез
             </Button>
+            <span className={styles.or}>ИЛИ</span>
           </form>
         )}
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse);
+          }}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+        />
+
         <div className={styles.bottomPart}>
           {isLogged ? (
             <span>Благодарим Ви, че избрахте нас!</span>

@@ -80,6 +80,13 @@
   color: var(--error-color);
 }
 
+.or {
+  font-size: 18px;
+  color: var(--third-color);
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .input {
     width: 80%;
