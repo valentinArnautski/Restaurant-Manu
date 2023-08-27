@@ -7,7 +7,11 @@ import {
 } from "@mui/icons-material";
 import styles from "./manager.module.css";
 
-const Manager = () => {
+const Manager = ({ onClose }) => {
+  const handleExitButton = () => {
+    localStorage.removeItem("token");
+  };
+
   return (
     <div className={styles.container}>
       <Button
@@ -41,6 +45,10 @@ const Manager = () => {
         variant="text"
         fullWidth
         startIcon={<ExitToApp className={styles.icon} />}
+        onClick={() => {
+          handleExitButton();
+          onClose();
+        }}
       >
         Изход
       </Button>

@@ -1,11 +1,10 @@
 import { Button, IconButton, TextField } from "@mui/material";
 import Modal from "../UI Elements/Modal";
 import styles from "./login.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loginUser } from "../../services/fetchService";
 import Manager from "./Manager";
 import CloseButton from "../UI Elements/CloseButton";
-import { Cancel } from "@mui/icons-material";
 import { GoogleLogin } from "@react-oauth/google";
 
 const Login = (props) => {
@@ -13,6 +12,15 @@ const Login = (props) => {
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const [isLogged, setIsLogged] = useState(false);
+  const [JWT, setJWT] = useState("");
+
+  useEffect(() => {
+    const storedJWT = localStorage.getItem("token");
+    if (storedJWT) {
+      setIsLogged(true);
+      setJWT(storedJWT);
+    }
+  }, []);
 
   const handleEmailInput = (e) => {
     setEmail(e.target.value);
@@ -34,6 +42,8 @@ const Login = (props) => {
 
       const response = await loginUser(userData);
       setIsLogged(true);
+      localStorage.setItem("token", response.idToken);
+      setJWT(response.idToken);
       console.log("Login successful:", response);
     } catch (error) {
       setLoginError("Грешни данни за вход.");
@@ -45,7 +55,7 @@ const Login = (props) => {
     <Modal onClose={props.onClose}>
       <div className={styles.container}>
         <div className={styles.loginHeader}>
-          {isLogged ? (
+          {isLogged && JWT ? (
             <h2 className={styles.head}>{`Добре дошъл, ${email}`}</h2>
           ) : (
             <h2 className={styles.head}>Влез в профила си</h2>
@@ -53,7 +63,7 @@ const Login = (props) => {
           <CloseButton onClose={props.onClose} />
         </div>
         {isLogged ? (
-          <Manager isLogged={isLogged} />
+          <Manager isLogged={isLogged} onClose={props.onClose} />
         ) : (
           <form className={styles.submitForm} onSubmit={handleLoginInput}>
             <TextField
