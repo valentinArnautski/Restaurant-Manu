@@ -1,74 +1,32 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import {
-  PersonOutline,
-  ShoppingCart,
-  LocalOffer,
-  ExitToApp,
-} from "@mui/icons-material";
+import { LocalOffer, ExitToApp } from "@mui/icons-material";
 import styles from "./manager.module.css";
-import Profile from "../AccountMenu/Profile";
-import Deals from "../AccountMenu/Deals";
-import Reservations from "../AccountMenu/Reservations"
+import Reservations from "../AccountMenu/Reservations";
 
 const Manager = ({ onClose }) => {
-  const [showProfile, setShowProfile] = useState(false);
-  const [showDeals, setShowDeals] = useState(false);
-  const [showReservations, setShowReservations] = useState(false);
-  const [selectedButton, setSelectedButton] = useState(false);
+  const [reservation, setReservation] = useState(false);
 
   const handleExitButton = () => {
     localStorage.removeItem("token");
   };
 
-  const handleMyProfile = () => {
-    setShowProfile(true);
-    setSelectedButton(true);
-  };
-
-  const handleDeals = () => {
-    setShowDeals(true);
-    setSelectedButton(true);
-  };
-
-  const handleReservations = () => {
-    setShowReservations(true);
-    setSelectedButton(true);
+  const handleReservationClick = () => {
+    setReservation(true);
   };
 
   return (
-    <div className={styles.container}>
-      {!selectedButton && (
-        <>
-          <Button
-            className={styles.button}
-            variant="text"
-            fullWidth
-            startIcon={
-              <PersonOutline className={styles.icon} fontSize="large" />
-            }
-            onClick={handleMyProfile}
-          >
-            Моят профил
-          </Button>
-
-          <Button
-            className={styles.button}
-            variant="text"
-            fullWidth
-            startIcon={<ShoppingCart className={styles.icon} />}
-          >
-            Кошница
-          </Button>
-
+    <div>
+      {!reservation ? (
+        <div className={styles.container}>
           <Button
             className={styles.button}
             variant="text"
             fullWidth
             startIcon={<LocalOffer className={styles.icon} />}
-            onClick={handleDeals}
+            onClick={handleReservationClick}
           >
-            Предложения
+            Резервация
           </Button>
 
           <Button
@@ -83,12 +41,10 @@ const Manager = ({ onClose }) => {
           >
             Изход
           </Button>
-        </>
-      )}
+        </div>
+      ) : null}
 
-      {showProfile && <Profile />}
-      {showDeals && <Deals />}
-      {showReservations && <Reservations />}
+      {reservation && <Reservations />}
     </div>
   );
 };
