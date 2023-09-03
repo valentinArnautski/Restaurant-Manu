@@ -21,7 +21,7 @@ const Reservations = () => {
         <MenuItem value={2}>Маса за двама</MenuItem>
         <MenuItem value={3}>Маса за четирима</MenuItem>
         <MenuItem value={6}>Семейна маса (4 - 6 човека)</MenuItem>
-        <MenuItem value={8}>Маса за празненства (6+ човека)</MenuItem>
+        <MenuItem value={10}>Маса за празненства (6+ човека)</MenuItem>
       </Select>
 
       <TextField
